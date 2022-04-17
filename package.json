@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng-packagr -p projects/props-api/package.json",
-    "build:lib:native": "ng build props-api",
-    "export:lib": "npm run build:lib && cd dist/props-api && npm link && npm pack",
-    "package:lib": "cd dist/props-api && npm link && npm pack"
+    "build:props_api:lib": "ng-packagr -p projects/props-api/package.json",
+    "build:props_api:lib:native": "ng build props-api",
+    "export:props_api:lib": "npm run build:props_api:lib && cd dist/props-api && npm link && npm pack",
+    "package:props_api:lib": "cd dist/props-api && npm link && npm pack"
   },
   "private": true,
   "dependencies": {

@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { PropsApiComponent } from './props-api.component';
 import { PropsApiService } from './props-api.service';
+import { NgxCacheHandlerService } from './services/handler/ngx-cache-handler.service';
+import { NgxCacheService } from './services/ngx-cache.service';
+import { NgxStoragesService } from './services/ngx-storages.service';
 
 
 
@@ -24,10 +27,11 @@ export class PropsApiModule {
     return {
       ngModule: PropsApiService,
       providers: [
-        // {
-        //   provide: CacheService,
-        //   useClass: CacheImplService
-        // }
+        NgxStoragesService,
+        {
+          provide: NgxCacheService,
+          useClass: NgxCacheHandlerService
+        }
       ]
     };
   }
